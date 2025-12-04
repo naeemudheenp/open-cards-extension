@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Open-Cards</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <span class="dot"></span>
+      <span class="logo-text">Open-Cards</span>
+    </div>
+    <button id="saveLinkBtn" class="primary-btn">+ Save current tab</button>
+  </header>
+
+  <section class="controls">
+    <input id="searchInput" class="input" placeholder="Search by title or URL..." />
+    <select id="categoryFilter" class="select">
+      <option value="all">All categories</option>
+    </select>
+  </section>
+
+  <section class="add-manual collapsible">
+    <div class="collapsible-header" id="addLinkToggle">
+      <h2 class="section-title">Add custom link</h2>
+      <span class="collapse-icon">▼</span>
+    </div>
+    <div class="collapsible-content" id="addLinkContent">
+      <input id="manualTitle" class="input" placeholder="Title e.g. 'Login - Helpdesk'" />
+      <input id="manualUrl" class="input" placeholder="https://..." />
+      <select id="manualCategory" class="select"></select>
+      <button id="addManualBtn" class="secondary-btn">Add link</button>
+    </div>
+  </section>
+
+  <section class="add-category collapsible">
+    <div class="collapsible-header" id="addCategoryToggle">
+      <h2 class="section-title">Manage categories</h2>
+      <span class="collapse-icon">▶</span>
+    </div>
+    <div class="collapsible-content collapsed" id="addCategoryContent">
+      <div class="category-input-row">
+        <input id="newCategoryInput" class="input" placeholder="New category name..." />
+        <button id="addCategoryBtn" class="add-cat-btn">+</button>
+      </div>
+      <div id="categoryList" class="category-list"></div>
+    </div>
+  </section>
+
+  <section id="cardsContainer" class="cards-container">
+  </section>
+
+  <template id="cardTemplate">
+    <article class="card">
+      <div class="card-main">
+        <div class="card-header">
+          <span class="card-category"></span>
+          <button class="card-pin" title="Pin / Unpin">📌</button>
+        </div>
+        <div class="card-title"></div>
+        <a class="card-url" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+      <div class="card-actions">
+        <button class="card-open">Open</button>
+        <button class="card-copy">Copy</button>
+        <button class="card-delete">Delete</button>
+      </div>
+    </article>
+  </template>
+
+  <template id="categoryCardTemplate">
+    <article class="category-card">
+      <div class="category-card-header">
+        <span class="category-card-title"></span>
+        <span class="category-card-count"></span>
+      </div>
+      <div class="category-card-items"></div>
+    </article>
+  </template>
+
+  <template id="categoryItemTemplate">
+    <div class="category-item">
+      <div class="category-item-info">
+        <div class="category-item-title"></div>
+        <a class="category-item-url" target="_blank" rel="noopener noreferrer"></a>
+      </div>
+      <div class="category-item-actions">
+        <button class="item-pin" title="Pin / Unpin">📌</button>
+        <button class="item-open">Open</button>
+        <button class="item-copy">Copy</button>
+        <button class="item-delete">Delete</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="popup.js"></script>
+</body>
+</html>
