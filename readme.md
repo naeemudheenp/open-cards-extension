@@ -1,7 +1,7 @@
 # Open-Cards  
 A premium dark-themed Chrome extension to save, organize, and instantly access your most important work links — tickets, Figma files, dashboards, login pages, PRs, daily tools, and more.
 
-![Open-Cards Banner](./assets/preview.png)
+
 
 ## 🚀 Features
 
